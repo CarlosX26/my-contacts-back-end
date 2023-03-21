@@ -21,14 +21,12 @@ export class Contact {
   @Column({
     type: "varchar",
     length: 128,
-    unique: true,
   })
   email: string;
 
   @Column({
     type: "varchar",
     length: 11,
-    unique: true,
   })
   phoneNumber: string;
 
