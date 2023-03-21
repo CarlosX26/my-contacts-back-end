@@ -16,8 +16,8 @@ const getDataSourceOptions = (): DataSourceOptions => {
     url: DB_URL,
     synchronize: false,
     logging: true,
-    entities: [path.join(__dirname, "./migrations/**.{js,ts}")],
-    migrations: [path.join(__dirname, "./entities/**.{js,ts}")],
+    entities: [path.join(__dirname, "./entities/**.{js,ts}")],
+    migrations: [path.join(__dirname, "./migrations/**.{js,ts}")],
   };
 };
 

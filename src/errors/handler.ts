@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { StatusCodes } from "http-status-codes";
+import { ZodError } from "zod";
 import AppError from "./appError";
 
 const handlerError = (
@@ -10,6 +11,12 @@ const handlerError = (
 ) => {
   if (error instanceof AppError) {
     return res.status(error.statusCode).json({ message: error.message });
+  }
+
+  if (error instanceof ZodError) {
+    return res
+      .status(StatusCodes.BAD_REQUEST)
+      .json(error.flatten().fieldErrors);
   }
 
   console.log(error);
