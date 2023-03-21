@@ -4,6 +4,7 @@ import createClientController from "../controllers/clients/createClient.controll
 import validateSchemaMiddleware from "../middlewares/validateSchema.middleware";
 import validateEmailMiddleware from "../middlewares/validateEmail.middleware";
 import validatePhoneNumberMiddleware from "../middlewares/validatePhoneNumber.middleware";
+import validateTokenMiddleware from "../middlewares/validateToken.middleware";
 
 const clientRouter = Router();
 
@@ -14,5 +15,6 @@ clientRouter.post(
   validatePhoneNumberMiddleware,
   createClientController
 );
+clientRouter.get("/profile", validateTokenMiddleware);
 
 export default clientRouter;
