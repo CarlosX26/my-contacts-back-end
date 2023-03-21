@@ -7,6 +7,8 @@ const clientSchema = z.object({
   password: z.string().max(150),
 });
 
+const clientUpdateSchema = clientSchema.partial();
+
 const clientWithoutPasswordSchema = clientSchema
   .extend({
     createdAt: z.date(),
@@ -15,4 +17,4 @@ const clientWithoutPasswordSchema = clientSchema
     password: true,
   });
 
-export { clientSchema, clientWithoutPasswordSchema };
+export { clientSchema, clientWithoutPasswordSchema, clientUpdateSchema };
