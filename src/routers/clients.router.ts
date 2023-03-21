@@ -21,6 +21,7 @@ clientRouter.post(
 clientRouter.get("/profile", validateTokenMiddleware, readClientController);
 clientRouter.patch(
   "/profile",
+  validateTokenMiddleware,
   validateSchemaMiddleware(clientUpdateSchema),
   updateClientController
 );

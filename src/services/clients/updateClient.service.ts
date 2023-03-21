@@ -11,6 +11,7 @@ const updateClientService = async (
   clientId: string,
   payload: IClientUpdate
 ): Promise<IClientWithoutPassword> => {
+  console.log("🚀 ~ file: updateClient.service.ts:14 ~ clientId:", clientId);
   const clientRepo = AppDataSource.getRepository(Client);
 
   if (!Object.keys(payload).length) {
