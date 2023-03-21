@@ -12,6 +12,7 @@ const clientUpdateSchema = clientSchema.partial();
 const clientWithoutPasswordSchema = clientSchema
   .extend({
     createdAt: z.date(),
+    id: z.string(),
   })
   .omit({
     password: true,
