@@ -6,9 +6,11 @@ const contactSchema = z.object({
   phoneNumber: z.string().max(11).min(11),
 });
 
+const contactUpdateSchema = contactSchema.partial();
+
 const contactReturnSchema = contactSchema.extend({
   createdAt: z.date(),
   id: z.string(),
 });
 
-export { contactSchema, contactReturnSchema };
+export { contactSchema, contactReturnSchema, contactUpdateSchema };
