@@ -7,13 +7,13 @@ Este é um sistema CRUD de clientes e contatos, que permite que um cliente reali
 Clone o projeto
 
 ```bash
-  git clone git@github.com:CarlosX26/crud-clients-contacts.git
+  git clone git@github.com:CarlosX26/my-contacts-back-end.git
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd crud-clients-contacts
+  cd my-contacts-back-end
 ```
 
 Instale as dependências
